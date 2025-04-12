@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="chartJs.css">
+    <title>Implementando o ChartJs</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1"></script>
+</head>
+
+<body>
+    <div class="div2">
+        <h1>Minha Primeira Dashboard</h1>
+        <h4>ByCat</h4>
+    </div>
+
+    <div class="div1">
+
+        <div>
+            <canvas id="myChart" style="position: relative; height:40vh; width:40vw"></canvas>
+        </div>
+        <div>
+            <canvas id="myChart2" style="position: relative; height:40vh; width:40vw"></canvas>
+        </div>
+        <div>
+            <canvas id="myChart3" style="position: relative; height:20vh; width:20vw"></canvas>
+        </div>
+
+    </div>
+
+    <div class="div3">
+        <h3>Obrigado por olhar os meus gráficos</h3> 
+        <img src="https://png.pngtree.com/png-vector/20241110/ourmid/pngtree-cat-with-raised-paw-png-image_14333142.png" alt="">
+    </div>
+
+</body>
+
+<script>
+    const labels = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(145, 125, 255)',
+            borderColor: 'rgb(145, 125, 255)',
+            data: [0, 10, 5, 2, 20, 30, 45],
+        }]
+    };
+    const data2 = {
+        labels: labels,
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: [
+                'rgb(200, 185, 255)',
+                'rgb(170, 150, 255)',
+                'rgb(145, 125, 255)',
+                'rgb(131, 111, 255)',
+                'rgb(100, 85, 210)',
+                'rgb(75, 60, 160)',
+            ],
+            borderColor: 'rgb(244, 240, 255)',
+            hoverOffset: 25,
+            data: [33, 10, 5, 2, 20, 30],
+        }]
+    };
+
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+    };
+
+    const config2 = {
+        type: 'bar',
+        data: data2,
+        options: {}
+    };
+
+    const config3 = {
+        type: 'doughnut',
+        data: data2,
+    };
+</script>
+
+<script>
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config2
+    );
+    const myChart3 = new Chart(
+        document.getElementById('myChart3'),
+        config3
+    );
+</script>
+
+</html>
